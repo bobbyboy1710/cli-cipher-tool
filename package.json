@@ -1,0 +1,16 @@
+{
+  "name": "cipher-cli-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "node index.js -c \"C0-15\" -i \"./input.txt\" -o \"./output.txt\" --config 'C0' --input 'input.txt' --output 'output.txt'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
