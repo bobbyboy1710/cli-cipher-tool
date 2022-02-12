@@ -8,6 +8,10 @@ const flags = {
   o: "output",
 }
 
+const ciphers = ["C", "R", "A"]
+
+const modes = [0, 1]
+
 function getArgs() {
   const result = {}
   const myArgs = process.argv.slice(2)
@@ -26,10 +30,30 @@ function getArgs() {
     if (result[value]) {
       //TODO: Add error
       console.log("You enter the same key twice")
+      continue //!Change
     }
     result[value] = argValue
   }
+  if (!result.config) {
+    //TODO: Doesnt exist property config
+  }
+  result.config = parseConfig(result.config)
+  console.log(result.config)
   return result
 }
 
 console.log(getArgs())
+
+function parseConfig(config) {
+  const result = []
+  const myArg = config.split("-").forEach((el) => {
+    const type = el[0]
+    const mode = parseInt(el[1])
+    if (ciphers.includes(type) && modes.includes(mode)) {
+      result.push({ type, mode })
+    } else {
+      //TODO: Throw error inccorect input
+    }
+  })
+  return result
+}
