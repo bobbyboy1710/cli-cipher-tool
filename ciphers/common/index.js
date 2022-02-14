@@ -31,8 +31,15 @@ const alfLength = engAlfLower.length
 
 const isUpperCase = (sym) => sym === sym.toUpperCase()
 
+const ATBASH_CIPHER_SIGN = "A"
+const CESAR_CIPHER_SIGN = "C"
+const ROT_CIPHER_SIGN = "R"
+
 module.exports = {
   engAlfLower,
   alfLength,
   isUpperCase,
+  ATBASH_CIPHER_SIGN,
+  CESAR_CIPHER_SIGN,
+  ROT_CIPHER_SIGN,
 }
